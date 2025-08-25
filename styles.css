@@ -1,0 +1,13 @@
+#block {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      margin: 20px auto;
+      transition: all 0.3s ease;
+    }
+
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
