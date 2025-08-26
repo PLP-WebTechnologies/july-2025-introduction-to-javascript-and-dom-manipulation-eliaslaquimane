@@ -1,32 +1,65 @@
- // initializing the variable
- const block = document.getElementById("block");
-    let size = 100;
-    let position = 0;
 
-    // change the color to
-    function changeColor() {
-      block.style.backgroundColor = block.style.backgroundColor === "red" ? "blue" : "red";
-    }
+// Applying - Variables and Conditionals
+const checkAgeBtn = document.getElementById("checkAgeBtn");
+checkAgeBtn.addEventListener("click", () => {
+  let age = parseInt(document.getElementById("userAge").value);
+  const result = document.getElementById("ageResult");
 
-    // increase the size of the block
-    function upTheSize() {
-      size = size + 20;
-      block.style.width = size + "px";
-      block.style.height = size + "px";
-    }
+  // Using Conditional
+  if (isNaN(age)) {
+    result.textContent = "Try a valid number.";
+  } else if (age >= 18) {
+    result.textContent = "You are an adult!";
+  } else {
+    result.textContent = "You are under 18.";
+  }
+});
 
-    // moving the block to the right
-    function moveRight() {
-      position += 20;
-      block.style.marginLeft = position + "px";
-    }
 
-    // resting the block of the block
-    function defaultBlock() {
-      size = 100;
-      position = 0;
-      block.style.width = "100px";
-      block.style.height = "100px";
-      block.style.marginLeft = "0px";
-      block.style.backgroundColor = "blue";
-    }
+// Usging function to Generate a list of numbers
+function generateNumbers() {
+  const numberList = document.getElementById("numberList");
+  numberList.innerHTML = ""; 
+
+  for (let i = 1; i <= 5; i++) {
+    const li = document.createElement("li");
+    li.textContent = "Number " + i;
+    numberList.appendChild(li);
+  }
+}
+
+// Using a function to Countdown
+function startCountdown() {
+  let countdownText = "";
+  let i = 5;
+
+  while (i >= 1) {
+    countdownText += i + " ";
+    i--;
+  }
+  document.getElementById("countdownResult").textContent = countdownText;
+}
+
+// get the Id from the html
+document.getElementById("generateNumbersBtn").addEventListener("click", generateNumbers);
+document.getElementById("countdownBtn").addEventListener("click", startCountdown);
+
+
+const changingBgBtn = document.getElementById("changingBg");
+changingBgBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  document.getElementById("changingText").textContent =
+    document.body.classList.contains("dark-mode")
+      ? " Dark mode"
+      : "Light mode";
+});
+
+// dark mode
+const style = document.createElement("style");
+style.innerHTML = `
+  .dark-mode {
+    background-color: #000000ff;
+    color: black;
+  }
+`;
+document.head.appendChild(style);

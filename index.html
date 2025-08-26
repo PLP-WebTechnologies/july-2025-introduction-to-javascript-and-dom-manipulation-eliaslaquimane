@@ -2,20 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Assignment week 05</title>
-  <link rel="stylesheet" href="./styles.css
-  "/>
+  <title>JavaScript Fundamentals Project</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h2>Assignment week - 05</h2>
-  
-  <div id="block"></div>
-  
-  <button onclick="changeColor()">Change Color</button>
-  <button onclick="upTheSize()">Increase Size</button>
-  <button onclick="moveRight()">Move Right</button>
-  <button onclick="resetBlock()">Reset</button>
-  
-  <script src="./script.js"></script>
+  <h1>Assignment - week-5</h1>
+
+  <!-- allowing the user insert data -->
+  <div class="box">
+    <label for="userAge">Enter your age:</label>
+    <input type="number" id="userAge" placeholder="e.g. 18">
+    <button id="checkAgeBtn">Check Age</button>
+    <p id="ageResult"></p>
+  </div>
+
+  <!-- uding fu to generating numbers -->
+  <div class="box">
+    <h2>Generate and Count number</h2>
+    <button id="generateNumbersBtn">Generate 1 to 5</button>
+    <ul id="numberList"></ul>
+
+    <button id="countdownBtn">Counting 5 to 1</button>
+    <p id="countdownResult"></p>
+  </div>
+
+  <!-- Changeing the backgound-->
+  <div class="box">
+    <h2>Changing the theme</h2>
+    <button id="changingBg">Toggle Background Color</button>
+    <p id="changingText">Click to change the background.</p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
